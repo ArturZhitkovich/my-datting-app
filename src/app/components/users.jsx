@@ -38,7 +38,8 @@ const Users = ({ users, ...rest }) => {
                 itemsCount={count}
                 pageSize={pageSize}
                 currentPage={currentPage}
-                onPageChange={handlePageChange}/>
+                onPageChange={handlePageChange}
+            />
         </>
     );
 };
