@@ -1,5 +1,5 @@
 import React from "react";
-import _ from "lodash";
+import _ from "lodash"; // лучше испортируй сразу range, не надо тащить всю библиотек, import range from 'lodash/range
 import PropTypes from "prop-types";
 
 const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
@@ -29,6 +29,7 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
         </nav>
     );
 };
+
 Pagination.propTypes = {
     itemsCount: PropTypes.number.isRequired,
     pageSize: PropTypes.number.isRequired,
