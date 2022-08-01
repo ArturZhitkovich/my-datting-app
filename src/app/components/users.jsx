@@ -10,7 +10,7 @@ import SearchStatus from "./searchStatus";
 const Users = ({ allUsers, ...rest }) => {
     const pageSize = 2;
     const [currentPage, setCurrentPage] = useState(1);
-    const [professions, setProfessions] = useState();
+    const [professions, setProfessions] = useState(); // старайся задавать начальное значение useState([])
     const [selectedProf, setSelectedProf] = useState(null);
 
     useEffect(() => {
@@ -18,11 +18,13 @@ const Users = ({ allUsers, ...rest }) => {
     }, []);
 
     useEffect(() => {
-        setCurrentPage(1);
+        setCurrentPage(1); // лучше в  handleProfessionSelect
     }, [selectedProf]);
 
     const handleProfessionSelect = (item) => {
         setSelectedProf(item);
+        setCurrentPage(1); // лучше тут 
+
     };
 
     const handlePageChange = (pageIndex) => {
@@ -38,7 +40,7 @@ const Users = ({ allUsers, ...rest }) => {
     const userCrop = paginate(filteredUsers, currentPage, pageSize);
 
     const clearFilter = () => {
-        setSelectedProf();
+        setSelectedProf(); // setSelectedProf(null);
     };
 
     return (
